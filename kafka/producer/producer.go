@@ -36,6 +36,7 @@ func main() {
 		// 构造订单消息
 		message := &sarama.ProducerMessage{
 			Topic: "orders",
+			//这里key是可选的。
 			Value: sarama.StringEncoder(fmt.Sprintf("%s,%d,%d", orderID, productID, quantity)),
 		}
 
